@@ -3,6 +3,7 @@ using Demo.Service.Gateway.Schemas;
 using Demo.Service.Gateway.Service;
 using GraphQL;
 using GraphQL.Server.Transports.AspNetCore;
+using GraphQL.Server.Ui.GraphiQL;
 using GraphQL.Server.Ui.Playground;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,6 +42,7 @@ namespace Demo.Service.Gateway
 
             app.UseGraphQLHttp<GatewaySchema>(new GraphQLHttpOptions());
             app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
+            app.UseGraphiQLServer(new GraphiQLOptions());
         }
     }
 }
